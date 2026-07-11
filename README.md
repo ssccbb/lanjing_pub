@@ -25,6 +25,10 @@
 
 > 演示站数据仅供展示，部分功能可能受限。
 
+### 📹 演示视频
+
+https://github.com/user-attachments/assets/demo.mov
+
 ---
 
 ## ✨ 核心特性
