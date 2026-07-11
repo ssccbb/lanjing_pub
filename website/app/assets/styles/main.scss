@@ -1,0 +1,135 @@
+// 主样式文件
+
+// Element Plus 深色主题变量
+:root {
+  --el-bg-color: #141414;
+  --el-bg-color-page: #141414;
+  --el-bg-color-overlay: #141414;
+  --el-text-color-primary: #f5f5f5;
+  --el-text-color-regular: #e5e5e5;
+  --el-text-color-secondary: #a3a3a3;
+  --el-border-color: #333333;
+  --el-fill-color: #141414;
+  --el-fill-color-light: #333333;
+  --el-fill-color-lighter: #404040;
+}
+
+// Element Plus Dialog 深色模式
+.el-dialog {
+  background-color: #141414 !important;
+}
+
+.el-dialog__header {
+  background-color: #141414;
+}
+
+.el-dialog__body {
+  background-color: #141414;
+}
+
+// 登录弹窗透明背景
+.el-dialog.auth-dialog {
+  background: rgba(20, 20, 20, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  .el-dialog__body {
+    background: transparent !important;
+  }
+}
+
+// 下拉菜单透明背景
+.dropdown-transparent {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+// Element Plus 组件样式覆盖
+.el-skeleton {
+  --el-skeleton-color: #333333;
+  --el-skeleton-to-color: #404040;
+}
+
+.el-pagination {
+  --el-pagination-bg-color: transparent !important;
+  --el-pagination-hover-color: #3b82f6 !important;
+  --el-pagination-text-color: #ffffff !important;
+  --el-pagination-button-bg-color: transparent !important;
+
+  .btn-prev,
+  .btn-next {
+    background-color: transparent !important;
+    color: #ffffff !important;
+
+    &:hover {
+      color: #3b82f6 !important;
+    }
+
+    &:disabled {
+      color: #666666 !important;
+    }
+  }
+
+  .el-pager li {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    min-width: 32px;
+
+    &:hover {
+      color: #3b82f6 !important;
+    }
+
+    &.is-active {
+      background-color: transparent !important;
+      color: #3b82f6 !important;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+}
+
+// 全局过渡动画
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+
+  &:hover {
+    background: #525252;
+  }
+}
+
+// 选中样式
+::selection {
+  background: rgba(59, 130, 246, 0.4);
+  color: #f5f5f5;
+}
+
+// Element Plus Message 层级调整（确保显示在弹窗之上）
+.el-message {
+  z-index: 9999 !important;
+}
+
+.el-message-box__wrapper {
+  z-index: 9998 !important;
+}

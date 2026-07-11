@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# 禁止爬虫访问的目录
+Disallow: /api/
+Disallow: /admin/
+
+# 站点地图
+Sitemap: /sitemap.xml

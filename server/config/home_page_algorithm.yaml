@@ -1,0 +1,107 @@
+# 首页推荐算法配置
+# 修改此文件后，下次脚本执行时自动生效
+
+algorithm:
+  # 热度分权重配置（总和应为1.0）
+  # 具体权重值可根据业务需求调整
+  weights:
+    watch_heat: 0.0       # 观看热度权重
+    score_quality: 0.0    # 评分质量权重
+    freshness: 0.0        # 内容新鲜度权重
+    user_recommend: 0.0   # 用户推荐权重
+    search_heat: 0.0      # 搜索热度权重
+    chart_bonus: 0.0      # 榜单排名加成权重
+
+  # 各维度封顶值（用于归一化）
+  caps:
+    watch_count: 0        # 观看次数封顶值
+    recommend_num: 0      # 推荐数封顶值
+    search_count: 0       # 搜索次数封顶值
+
+  # 榜单排名加成配置
+  chart_bonus:
+    enabled: true         # 是否启用榜单加成
+    # 各榜单排名对应的加成分数（百分制）
+    rank_scores:
+      1: 0
+      2: 0
+      3: 0
+      4: 0
+      5: 0
+      6: 0
+      7: 0
+      8: 0
+      9: 0
+      10: 0
+      15: 0
+      20: 0
+      30: 0
+      50: 0
+    # 多榜同时上榜的叠加方式: max=取最高, sum=叠加（有上限）
+    combine_method: "max"
+
+  # 新鲜度衰减配置
+  freshness:
+    decay_per_day: 0      # 每天衰减分数
+    max_days: 0           # 最大有效天数（超过后新鲜度为0）
+    max_score: 0          # 新鲜度满分
+
+# 各区块筛选配置
+sections:
+  banner:
+    name: "首页轮播"
+    type: 1
+    category: 1           # 电影
+    min_score: 0.0        # 最低豆瓣评分
+    count: 8              # 展示数量
+    require_cover: true   # 要求有封面图
+    order_by: "heat_score" # 排序方式
+
+  latest:
+    name: "最新上线"
+    type: 2
+    days_window: 7        # 最近N天
+    count: 12
+    order_by: "update_time"
+
+  hot_movies:
+    name: "热门电影"
+    type: 3
+    category: 1
+    count: 12
+    order_by: "heat_score"
+
+  hot_tv:
+    name: "热播电视剧"
+    type: 4
+    category: 2
+    count: 12
+    order_by: "heat_score"
+
+  hot_variety:
+    name: "热门综艺"
+    type: 5
+    category: 3
+    count: 12
+    order_by: "heat_score"
+
+  anime:
+    name: "动漫推荐"
+    type: 6
+    category: 4
+    count: 12
+    order_by: "heat_score"
+
+# 排除配置
+exclusions:
+  # 排除的分类id
+  excluded_categories: [5]
+
+  # 排除的标签关键词（包含这些标签的影片将被排除）
+  excluded_tags:
+    - "your_excluded_tag_here"
+
+# 日志配置
+logging:
+  level: "INFO"           # DEBUG, INFO, WARNING, ERROR
+  log_updated_movies: true # 是否记录更新详情

@@ -1,0 +1,36 @@
+{
+  "name": "website",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=3072 nuxt build",
+    "build:lowmem": "cross-env NODE_OPTIONS=--max-old-space-size=2048 nuxt build",
+    "dev": "cross-env NODE_OPTIONS=--max-old-space-size=3072 nuxt dev --port 3333 --host 0.0.0.0",
+    "generate": "cross-env NODE_OPTIONS=--max-old-space-size=3072 nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "@nuxt/image": "^2.0.0",
+    "@vite-pwa/nuxt": "^1.1.1",
+    "@vueuse/nuxt": "^14.3.0",
+    "artplayer": "^5.4.0",
+    "element-plus": "^2.14.2",
+    "hls.js": "^1.6.16",
+    "nuxt": "^4.4.8",
+    "qrcode": "^1.5.4",
+    "vue": "^3.5.38",
+    "vue-router": "^5.1.0"
+  },
+  "devDependencies": {
+    "@element-plus/nuxt": "^1.1.5",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@vueuse/gesture": "^2.0.0",
+    "cross-env": "^7.0.3",
+    "sass": "^1.101.0",
+    "terser": "^5.48.0",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.5"
+  }
+}

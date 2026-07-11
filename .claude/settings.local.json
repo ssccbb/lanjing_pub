@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"D:/sungzhou/dev/web/lanjing_pub\" -name \"__pycache__\" -type d -exec rm -rf {} +)",
+      "Bash(find \"D:/sungzhou/dev/web/lanjing_pub\" -name \"__init__.py\" -type f -delete)"
+    ]
+  }
+}
