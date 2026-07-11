@@ -27,7 +27,7 @@
 
 ### 📹 演示视频
 
-https://github.com/user-attachments/assets/demo.mov
+https://github.com/user-attachments/assets/demo.mp4
 
 ---
 
